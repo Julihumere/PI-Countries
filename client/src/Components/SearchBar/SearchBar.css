@@ -1,0 +1,22 @@
+.input_search {
+  height: 3rem;
+  width: auto;
+  border-radius: 10px 0 0 10px;
+  background-color: midnightblue;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  padding-left: 1em;
+  border: none;
+}
+
+.input_search::placeholder {
+  color: white;
+}
+
+.btn_search {
+  height: 3.2rem;
+  border-radius: 0 10px 10px 0;
+  border: none;
+  cursor: pointer;
+  background: white;
+}

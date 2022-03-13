@@ -1,0 +1,155 @@
+.container_create {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding-bottom: 3rem;
+  padding-top: 5rem;
+}
+
+.form {
+  backdrop-filter: blur(10px);
+  width: 50rem;
+  text-align: center;
+  border-radius: 10px;
+  border: 3px solid #fff;
+}
+
+.container_input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.container_input label {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.container_input p {
+  color: red;
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.input_string {
+  width: 20rem;
+  border-radius: 10px;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.input_number {
+  width: 4rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.input_select {
+  border-radius: 10px;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.btn_home {
+  background: #fff;
+  color: #4741d7;
+  border: 2px solid #4741d7;
+  padding: 0.8rem 1rem;
+  left: 1rem;
+  top: 1rem;
+  border-radius: 3px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+}
+.btn_home:before,
+.btn_home:after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: -50%;
+  background-color: #4741d7;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.btn_home:after {
+  left: 100%;
+}
+.btn_home:hover {
+  color: #fff;
+}
+.btn_home:hover:before {
+  left: 0;
+}
+.btn_home:hover:after {
+  left: 50%;
+}
+
+.list-country {
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+  width: 30rem;
+
+  text-align: center;
+  border-radius: 10px;
+  border: 3px solid #fff;
+}
+
+.list-country label {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+  font-size: 3rem;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.title-country {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.btn-country {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: none;
+}
+
+.container_btn {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.btn_submit {
+  color: white;
+  letter-spacing: 0.4rem;
+  overflow: hidden;
+  transition: 0.2s;
+  width: 10em;
+  border-radius: 10px;
+  padding: 1rem;
+  border: none;
+  cursor: pointer;
+  background-color: #4741d7;
+}
+
+.btn_submit:hover {
+  background: #4741d7;
+  box-shadow: 0 0 10px #4741d7, 0 0 40px #4741d7, 0 0 80px #4741d7;
+  transition-delay: 1ms;
+  color: white;
+}

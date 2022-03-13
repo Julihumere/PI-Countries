@@ -1,0 +1,126 @@
+.container_page {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.container_detail {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+.detail {
+  width: 90rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 3em;
+  font-family: "Roboto", sans-serif;
+  backdrop-filter: blur(10px);
+}
+.detail img {
+  width: 50em;
+  height: 30em;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.detail h1 {
+  font-size: 5em;
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+}
+
+.detail h2 {
+  font-size: 2.5em;
+  font-family: "Roboto", sans-serif;
+}
+
+.container_activity {
+  padding-top: 5em;
+  padding-bottom: 5em;
+}
+
+.activity {
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(10px);
+  padding-bottom: 10px;
+  width: 40rem;
+  height: 90rem;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-family: "Roboto", sans-serif;
+}
+
+.activity h1 {
+  font-size: 5em;
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: left;
+  padding-left: 3rem;
+}
+
+details {
+  padding-bottom: 1rem;
+}
+summary {
+  font-size: 2rem;
+}
+
+.list p {
+  font-size: 1.2rem;
+}
+
+.btn_detail {
+  background: #fff;
+  color: #4741d7;
+  border: 2px solid #4741d7;
+  padding: 16px 20px;
+  border-radius: 3px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  display: inline-block;
+  cursor: pointer;
+}
+.btn_detail:hover {
+  color: #fff;
+}
+.btn_detail::after {
+  content: "";
+  background: #4741d7;
+  position: absolute;
+  z-index: -1;
+  padding: 16px 20px;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  right: 100%;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.btn_detail:hover::after {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}

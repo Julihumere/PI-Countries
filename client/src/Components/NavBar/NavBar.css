@@ -1,0 +1,42 @@
+.container_nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 1em;
+}
+
+.container_nav h1 {
+  font-size: 5em;
+}
+
+.btn_refresh {
+  background: none;
+  border: none;
+  font-size: 3em;
+  cursor: pointer;
+}
+
+.btn_create {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  color: white;
+  letter-spacing: 4px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.2s;
+  width: 15em;
+  padding: 0.8em;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: midnightblue;
+}
+
+.btn_create:hover {
+  background: midnightblue;
+  box-shadow: 0 0 10px midnightblue, 0 0 40px midnightblue,
+    0 0 80px midnightblue;
+  transition-delay: 1ms;
+  color: white;
+}
