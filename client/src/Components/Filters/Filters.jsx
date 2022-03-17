@@ -4,12 +4,10 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   filterByActivity,
-  filterByArea,
   filterByContinent,
   filterByIndependent,
   filterByLetter,
   filterByPopulation,
-  filterBySubRegion,
 } from "../../Redux/Actions";
 
 export default function Filters({ setPage }) {
@@ -64,12 +62,6 @@ export default function Filters({ setPage }) {
     setPage(1);
   };
 
-  const handleFilterInd = (e) => {
-    e.preventDefault();
-    dispatch(filterByIndependent(e.target.value));
-    setOrder(`${e.target.value}`);
-    setPage(1);
-  };
   return (
     <div className="container_filter">
       <div>
