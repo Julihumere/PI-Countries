@@ -1,3 +1,7 @@
+body {
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
 .container-card {
   max-width: 140rem;
   padding: 2em;

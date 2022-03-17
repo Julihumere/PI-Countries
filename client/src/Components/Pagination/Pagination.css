@@ -34,6 +34,29 @@
   left: 17.5em;
 }
 
+.navigation {
+  color: white;
+  background: midnightblue;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 1rem 1rem 1rem 0rem rgba(0, 0, 0, 0.7);
+  font-family: "Rowdies", cursive;
+}
+#prev {
+  margin-right: 1rem;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+#next {
+  margin-left: 1rem;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+.navigation:active:hover {
+  background-color: black;
+}
+
 .pagination {
   display: flex;
   padding-right: 0.5rem;
@@ -45,7 +68,7 @@
   border-radius: 4px;
   border: none;
   box-shadow: 1rem 1rem 1rem 0rem rgba(0, 0, 0, 0.7);
-  font-family: "Rowdies", cursive;
+  font-family: "Montserrat Alternates", sans-serif;
 }
 
 .active:active:hover,

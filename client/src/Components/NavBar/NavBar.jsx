@@ -6,7 +6,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import { useDispatch } from "react-redux";
 import { getCountries } from "../../Redux/Actions";
 
-export default function NavBar() {
+export default function NavBar({ setPage }) {
   const dispatch = useDispatch();
 
   const handleRefresh = (e) => {
@@ -17,7 +17,7 @@ export default function NavBar() {
     <>
       <nav>
         <div className="container_nav">
-          <h1>🌎Countries🌎</h1>
+          <h1>Countries🌎</h1>
           <SearchBar />
           <Link to={"/activity"}>
             <button className="btn_create">Create Activity</button>
@@ -27,7 +27,7 @@ export default function NavBar() {
           </button>
         </div>
         <div>
-          <Filters />
+          <Filters setPage={setPage} />
         </div>
       </nav>
     </>

@@ -11,9 +11,10 @@ const getApi = async () => {
       img: e.flags[1],
       continent: e.continents[0],
       capital: e.capital ? e.capital[0] : "Capital Not Found",
-      subregion: e.subregion,
+      subregion: e.subregion ? e.subregion : "Sub Region Not Found",
       area: e.area,
       population: e.population,
+      unMember: e.unMember,
     };
   });
   return info;

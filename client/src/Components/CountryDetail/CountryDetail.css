@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap");
+
 .container_page {
   display: flex;
   align-items: flex-start;
@@ -20,8 +22,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   padding-bottom: 3em;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
   backdrop-filter: blur(10px);
 }
 .detail img {
@@ -32,14 +35,14 @@
 }
 
 .detail h1 {
-  font-size: 5em;
-  font-family: "Roboto", sans-serif;
+  font-size: 4em;
+  font-family: "Montserrat Alternates", sans-serif;
   font-style: italic;
 }
 
 .detail h2 {
   font-size: 2.5em;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
 }
 
 .container_activity {
@@ -56,12 +59,12 @@
   height: 90rem;
   border: 1px solid black;
   border-radius: 10px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
 }
 
 .activity h1 {
   font-size: 5em;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
   font-style: italic;
   display: flex;
   justify-content: center;
@@ -81,10 +84,12 @@ details {
 }
 summary {
   font-size: 2rem;
+  font-weight: bold;
 }
 
 .list p {
   font-size: 1.2rem;
+  font-weight: bolder;
 }
 
 .btn_detail {

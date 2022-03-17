@@ -4,9 +4,13 @@ import {
   COUNTRIES_DETAIL,
   CREATE_ACTIVITY,
   FILTER_BY_ACTIVITY,
+  FILTER_BY_AREA,
   FILTER_BY_CONTINENTS,
+  FILTER_BY_INDEPENDENT,
   FILTER_BY_LETTER,
   FILTER_BY_POPULATION,
+  FILTER_BY_SUBREGION,
+  FILTER_BY_UNMEMBER,
   GET_ERROR,
 } from "./Actions";
 
@@ -56,16 +60,12 @@ export default function reducer(state = initialState, action) {
 
       let filterLetter =
         action.payload === "asc"
-          ? letter.sort((a, b) => {
-              if (a.name.toLowerCase() > b.name.toLowerCase()) return 1;
-              if (a.name.toLowerCase() < b.name.toLowerCase()) return -1;
-              return 0;
-            })
-          : letter.sort((a, b) => {
-              if (a.name.toLowerCase() < b.name.toLowerCase()) return 1;
-              if (a.name.toLowerCase() > b.name.toLowerCase()) return -1;
-              return 0;
-            });
+          ? letter.sort((a, b) =>
+              a.name.toLowerCase().localeCompare(b.name.toLowerCase())
+            )
+          : letter.sort((a, b) =>
+              b.name.toLowerCase().localeCompare(a.name.toLowerCase())
+            );
       return {
         ...state,
         countries: filterLetter,
@@ -76,14 +76,10 @@ export default function reducer(state = initialState, action) {
       let filterPopulation =
         action.payload === "asc"
           ? population.sort((a, b) => {
-              if (a.population < b.population) return 1;
-              if (a.population > b.population) return -1;
-              return 0;
+              return b.population - a.population;
             })
           : population.sort((a, b) => {
-              if (a.population > b.population) return 1;
-              if (a.population < b.population) return -1;
-              return 0;
+              return a.population - b.population;
             });
       return {
         ...state,

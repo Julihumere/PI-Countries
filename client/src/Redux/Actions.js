@@ -8,10 +8,15 @@ export const FILTER_BY_POPULATION = "FILTER_BY_POPULATION";
 export const FILTER_BY_LETTER = "FILTER_BY_LETTER";
 export const FILTER_BY_ACTIVITY = "FILTER_BY_ACTIVITY";
 export const GET_ERROR = "GET_ERROR";
+export const FILTER_BY_SUBREGION = "FILTER_BY_SUBREGION";
+const URL = "http://localhost:3001/countries";
+const URL_QUERY = "http://localhost:3001/countries?name=";
+const URL_PARAMS = "http://localhost:3001/countries/";
+const URL_POST = "http://localhost:3001/activity";
 
 export const getCountries = () => (dispatch) => {
   try {
-    return fetch("http://localhost:3001/countries")
+    return fetch(URL)
       .then((response) => response.json())
       .then((data) => {
         dispatch({
@@ -26,7 +31,7 @@ export const getCountries = () => (dispatch) => {
 
 export const getCountriesByName = (name) => (dispatch) => {
   try {
-    return fetch(`http://localhost:3001/countries?name=${name}`)
+    return fetch(URL_QUERY + name)
       .then((response) => response.json())
       .then((data) => {
         if (!data.msg) {
@@ -48,7 +53,7 @@ export const getCountriesByName = (name) => (dispatch) => {
 
 export const getCountriesDetail = (id) => (dispatch) => {
   try {
-    return fetch(`http://localhost:3001/countries/${id}`)
+    return fetch(URL_PARAMS + id)
       .then((response) => response.json())
       .then((data) => {
         dispatch({
@@ -63,7 +68,7 @@ export const getCountriesDetail = (id) => (dispatch) => {
 
 export const createActivity = (payload) => (dispatch) => {
   try {
-    return fetch("http://localhost:3001/activity", {
+    return fetch(URL_POST, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -71,7 +76,6 @@ export const createActivity = (payload) => (dispatch) => {
       },
       body: JSON.stringify(payload),
     }).then(() => {
-      console.log(payload);
       dispatch({
         type: CREATE_ACTIVITY,
       });
@@ -80,17 +84,6 @@ export const createActivity = (payload) => (dispatch) => {
     console.log(error);
   }
 };
-
-// export const createActivity = (payload) => async (dispatch) => {
-//   try {
-//     var response = await axios.post("http://localhost:3001/activity");
-//     dispatch({
-//       type: CREATE_ACTIVITY,
-//     });
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
 
 export const filterByLetter = (payload) => {
   return {
@@ -115,7 +108,7 @@ export const filterByPopulation = (payload) => {
 
 export const filterByActivity = (payload) => (dispatch) => {
   try {
-    return fetch("http://localhost:3001/countries")
+    return fetch(URL)
       .then((response) => response.json())
       .then((data) => {
         dispatch({

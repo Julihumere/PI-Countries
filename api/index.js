@@ -24,7 +24,7 @@ const { Country } = require("./src/db");
 const { getApi } = require("./src/Controllers/Controllers");
 
 // Syncing all the models at once.
-conn.sync().then(async () => {
+conn.sync({ force: true }).then(async () => {
   const DB = await Country.findAll();
   if (DB.length < 1) {
     const info = await getApi();

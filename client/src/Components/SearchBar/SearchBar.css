@@ -4,13 +4,15 @@
   border-radius: 10px 0 0 10px;
   background-color: midnightblue;
   color: white;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
   padding-left: 1em;
   border: none;
 }
 
 .input_search::placeholder {
   color: white;
+  opacity: 0.5;
+  font-family: "Montserrat Alternates", sans-serif;
 }
 
 .btn_search {
@@ -18,5 +20,11 @@
   border-radius: 0 10px 10px 0;
   border: none;
   cursor: pointer;
-  background: white;
+  background: rgb(20, 0, 75);
+  color: rgb(255, 255, 255);
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+.btn_search:hover {
+  background: rgb(12, 1, 44);
 }

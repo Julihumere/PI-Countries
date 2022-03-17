@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import "./AppRouter.css";
 import Landing from "../Components/Landing/Landing";
 import Home from "../Components/Home/Home";
 import CountryDetail from "../Components/CountryDetail/CountryDetail";

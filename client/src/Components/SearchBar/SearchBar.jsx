@@ -14,9 +14,13 @@ export default function SearchBar() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    dispatch(getCountriesByName(name));
-    setName("");
+    if (name === "") {
+      alert("Please, insert a name before your search");
+    } else {
+      e.preventDefault();
+      dispatch(getCountriesByName(name));
+      setName("");
+    }
   };
   return (
     <div>
@@ -24,7 +28,7 @@ export default function SearchBar() {
         type="text"
         onChange={(e) => handleInput(e)}
         value={name}
-        placeholder="Search"
+        placeholder="City..."
         className="input_search"
       />
       <button
@@ -32,7 +36,7 @@ export default function SearchBar() {
         onClick={(e) => handleSubmit(e)}
         className="btn_search"
       >
-        Buscar
+        Search
       </button>
     </div>
   );

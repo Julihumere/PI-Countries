@@ -1,4 +1,5 @@
 const { Router } = require("express");
+const { getAllActivities } = require("../Controllers/Controllers");
 const router = Router();
 const { Country, Activity } = require("../db");
 
@@ -19,7 +20,7 @@ router.post("/", async (req, res, next) => {
     });
     res.status(200).json({ msg: "Activity created" });
   } catch (error) {
-    res.status(404).json({ msg: "No Activity" });
+    next(error);
   }
 });
 

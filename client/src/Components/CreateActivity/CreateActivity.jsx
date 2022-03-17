@@ -32,6 +32,14 @@ export default function CreateActivity() {
     });
   };
 
+  const handleSelectSeason = (e) => {
+    setInput({
+      ...input,
+      season: e.target.value,
+    });
+  };
+  console.log(input.season);
+
   const handleSelect = (e) => {
     if (!input.countries.includes(e.target.value)) {
       setInput({
@@ -53,7 +61,7 @@ export default function CreateActivity() {
     if (!input.name) {
       errors.name = "Activity is required";
     } else if (!/^[A-Za-z0-9\s]+$/g.test(input.name)) {
-      errors.name = "Name only accepts letters and spaces";
+      errors.name = "Activities only accepts letters and spaces";
     }
     if (!input.duration) {
       errors.duration = "Duration is required";
@@ -64,6 +72,9 @@ export default function CreateActivity() {
       errors.difficulty = "Difficulty is required";
     } else if (!/^([1-4]|[1-4]\\d|5)$/.test(input.difficulty)) {
       errors.difficulty = "The difficulty must be between 1 and 5";
+    }
+    if (!input.season) {
+      errors.season = "Season is required";
     }
     if (input.countries < 1) {
       errors.countries = "Countries is required";
@@ -128,13 +139,17 @@ export default function CreateActivity() {
             />
             {error.difficulty && <p>{error.difficulty}</p>}
             <label>Season</label>
-            <input
-              type="text"
-              name="season"
+            <select
               value={input.season}
-              onChange={handleChange}
-              className="input_string"
-            />
+              onChange={(e) => handleSelectSeason(e)}
+              className="input_select"
+            >
+              <option hidden>Season</option>
+              <option value="Summer">Summer</option>
+              <option value="Winter">Winter</option>
+              <option value="Autumn">Autumn</option>
+              <option value="Spring">Spring</option>
+            </select>
             {error.season && <p>{error.season}</p>}
             <label>Countries</label>
             <select onChange={(e) => handleSelect(e)} className="input_select">

@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <div>
       <div>
-        <NavBar />
+        <NavBar setPage={setPage} />
       </div>
 
       <div>
@@ -42,6 +42,7 @@ export default function Home() {
           allCountries={allCountries.length}
           pagination={pagination}
           page={page}
+          setPage={setPage}
         />
       </div>
       <div className="container-card">

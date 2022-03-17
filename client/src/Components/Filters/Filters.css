@@ -1,3 +1,6 @@
+body {
+  font-family: "Montserrat Alternates", sans-serif;
+}
 .container_filter {
   display: flex;
   align-items: center;
@@ -22,7 +25,7 @@
   border-radius: 10px 10px 10px 10px;
   background-color: midnightblue;
   color: white;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat Alternates", sans-serif;
   cursor: pointer;
   padding-left: 1em;
   padding-right: 1em;

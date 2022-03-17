@@ -7,9 +7,10 @@ import {
   filterByContinent,
   filterByLetter,
   filterByPopulation,
+  filterBySubRegion,
 } from "../../Redux/Actions";
 
-export default function Filters() {
+export default function Filters({ setPage }) {
   const dispatch = useDispatch();
   const [order, setOrder] = useState("");
   const countries = useSelector((state) => state.allCountries);
@@ -18,18 +19,26 @@ export default function Filters() {
     e.preventDefault();
     dispatch(filterByLetter(e.target.value));
     setOrder(`${e.target.value}`);
+    setPage(1);
   };
 
   const handleFilterByPopulation = (e) => {
     e.preventDefault();
     dispatch(filterByPopulation(e.target.value));
     setOrder(`${e.target.value}`);
+    setPage(1);
   };
+
+  let continents = countries.map((e) => e.continent);
+  let filterContinents = continents.filter((e, index) => {
+    return continents.indexOf(e) === index;
+  });
 
   const handleFilterByContinent = (e) => {
     e.preventDefault();
     dispatch(filterByContinent(e.target.value));
     setOrder(`${e.target.value}`);
+    setPage(1);
   };
 
   let array = [];
@@ -49,7 +58,10 @@ export default function Filters() {
   });
 
   const handleFilterByActivities = (e) => {
+    e.preventDefault();
     dispatch(filterByActivity(e.target.value));
+    setOrder(`${e.target.value}`);
+    setPage(1);
   };
 
   return (
@@ -72,13 +84,9 @@ export default function Filters() {
         <select onChange={(e) => handleFilterByContinent(e)}>
           <option hidden>Order By Continents</option>
           <option value="All">All Continents</option>
-          <option value="Africa">Africa</option>
-          <option value="South America">South America</option>
-          <option value="North America">North America</option>
-          <option value="Oceania">Oceania</option>
-          <option value="Europe">Europe</option>
-          <option value="Asia">Asia</option>
-          <option value="Antarctica">Antarctica</option>
+          {filterContinents.map((e) => (
+            <option value={e}>{e}</option>
+          ))}
         </select>
       </div>
       <div>

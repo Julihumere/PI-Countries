@@ -15,13 +15,13 @@ router.get("/", async (req, res, next) => {
       if (Name.length) {
         res.status(200).json({ Name });
       } else {
-        res.status(404).json({ msg: "The country hasn't been found" });
+        res.json({ msg: "The country hasn't been found" });
       }
     } else {
       next();
     }
-  } catch (e) {
-    res.status(404).json({ msg: "No Name" });
+  } catch (error) {
+    next(error);
   }
 });
 
@@ -40,7 +40,7 @@ router.get("/", async (req, res, next) => {
       res.status(200).json(getAll());
     }
   } catch (error) {
-    res.json({ msg: "No Countries" });
+    next(error);
   }
 });
 
@@ -48,14 +48,14 @@ router.get("/:id", async (req, res, next) => {
   const { id } = req.params;
   try {
     const ID = await CountryById(id);
-
+    console.log(ID);
     if (ID) {
       res.status(200).json({ ID });
     } else {
       res.status(404).json({ msg: "No ID" });
     }
   } catch (error) {
-    console.log(error);
+    next(error);
   }
 });
 
