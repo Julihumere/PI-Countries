@@ -38,9 +38,8 @@ export default function CreateActivity() {
       season: e.target.value,
     });
   };
-  console.log(input.season);
 
-  const handleSelect = (e) => {
+  const handleSelectCountries = (e) => {
     if (!input.countries.includes(e.target.value)) {
       setInput({
         ...input,
@@ -152,7 +151,10 @@ export default function CreateActivity() {
             </select>
             {error.season && <p>{error.season}</p>}
             <label>Countries</label>
-            <select onChange={(e) => handleSelect(e)} className="input_select">
+            <select
+              onChange={(e) => handleSelectCountries(e)}
+              className="input_select"
+            >
               <option value={input.countries} hidden>
                 All Countries
               </option>

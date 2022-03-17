@@ -49,7 +49,7 @@ export default function CountryDetail() {
                   <summary>{e.name}</summary>
                   <p key={e.id}>✔️Name: {e.name} </p>
                   <p>⌚Duration: {e.duration} hrs</p>
-                  <p>🌟Difficulty: {e.difficulty} hrs</p>
+                  <p>🌟Difficulty: Level {e.difficulty}</p>
                   <p>
                     {season}Season: {e.season}
                   </p>

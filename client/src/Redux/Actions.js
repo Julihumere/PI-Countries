@@ -8,7 +8,6 @@ export const FILTER_BY_POPULATION = "FILTER_BY_POPULATION";
 export const FILTER_BY_LETTER = "FILTER_BY_LETTER";
 export const FILTER_BY_ACTIVITY = "FILTER_BY_ACTIVITY";
 export const GET_ERROR = "GET_ERROR";
-export const FILTER_BY_SUBREGION = "FILTER_BY_SUBREGION";
 const URL = "http://localhost:3001/countries";
 const URL_QUERY = "http://localhost:3001/countries?name=";
 const URL_PARAMS = "http://localhost:3001/countries/";

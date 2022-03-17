@@ -4,13 +4,9 @@ import {
   COUNTRIES_DETAIL,
   CREATE_ACTIVITY,
   FILTER_BY_ACTIVITY,
-  FILTER_BY_AREA,
   FILTER_BY_CONTINENTS,
-  FILTER_BY_INDEPENDENT,
   FILTER_BY_LETTER,
   FILTER_BY_POPULATION,
-  FILTER_BY_SUBREGION,
-  FILTER_BY_UNMEMBER,
   GET_ERROR,
 } from "./Actions";
 
@@ -88,13 +84,12 @@ export default function reducer(state = initialState, action) {
     }
     case FILTER_BY_CONTINENTS: {
       let continents = [...state.allCountries];
-      let filterContinents =
-        action.payload === "All"
-          ? state.allCountries
-          : continents.filter((e) => e.continent === action.payload);
+      let filterContinents = continents.filter(
+        (e) => e.continent === action.payload
+      );
       return {
         ...state,
-        countries: filterContinents,
+        countries: action.payload === "All" ? continents : filterContinents,
       };
     }
 
@@ -115,8 +110,7 @@ export default function reducer(state = initialState, action) {
       let filterActivities = activities.filter((e) => array.includes(e.id));
       return {
         ...state,
-        countries:
-          action.payload[1] === "All" ? state.allCountries : filterActivities,
+        countries: action.payload[1] === "All" ? activities : filterActivities,
         //payload
       };
     }

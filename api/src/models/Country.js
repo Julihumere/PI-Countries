@@ -39,10 +39,6 @@ module.exports = (sequelize) => {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
-      unMember: {
-        type: DataTypes.BOOLEAN,
-        allowNull: true,
-      },
     },
 
     {

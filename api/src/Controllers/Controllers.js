@@ -14,7 +14,6 @@ const getApi = async () => {
       subregion: e.subregion ? e.subregion : "Sub Region Not Found",
       area: e.area,
       population: e.population,
-      unMember: e.unMember,
     };
   });
   return info;

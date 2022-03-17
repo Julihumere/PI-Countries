@@ -4,7 +4,9 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   filterByActivity,
+  filterByArea,
   filterByContinent,
+  filterByIndependent,
   filterByLetter,
   filterByPopulation,
   filterBySubRegion,
@@ -19,14 +21,12 @@ export default function Filters({ setPage }) {
     e.preventDefault();
     dispatch(filterByLetter(e.target.value));
     setOrder(`${e.target.value}`);
-    setPage(1);
   };
 
   const handleFilterByPopulation = (e) => {
     e.preventDefault();
     dispatch(filterByPopulation(e.target.value));
     setOrder(`${e.target.value}`);
-    setPage(1);
   };
 
   let continents = countries.map((e) => e.continent);
@@ -64,6 +64,12 @@ export default function Filters({ setPage }) {
     setPage(1);
   };
 
+  const handleFilterInd = (e) => {
+    e.preventDefault();
+    dispatch(filterByIndependent(e.target.value));
+    setOrder(`${e.target.value}`);
+    setPage(1);
+  };
   return (
     <div className="container_filter">
       <div>
