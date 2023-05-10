@@ -48,7 +48,6 @@ router.get("/:id", async (req, res, next) => {
   const { id } = req.params;
   try {
     const ID = await CountryById(id);
-    console.log(ID);
     if (ID) {
       res.status(200).json({ ID });
     } else {
