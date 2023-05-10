@@ -6,8 +6,6 @@
   border: 2px solid black;
   border-top: none;
   width: 100rem;
-  position: relative;
-  left: 17.5em;
 }
 
 .page h1 {
@@ -30,8 +28,6 @@
   border-bottom-right-radius: 10px;
   padding-bottom: 3em;
   width: 100rem;
-  position: relative;
-  left: 17.5em;
 }
 
 .navigation {

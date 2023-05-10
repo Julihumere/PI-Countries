@@ -31,20 +31,17 @@ export default function Home() {
   };
 
   return (
-    <div>
-      <div>
-        <NavBar setPage={setPage} />
-      </div>
+    <div className="Home_container">
+      <NavBar setPage={setPage} />
 
-      <div>
-        <Pagination
-          countriesPerPage={countriesPerPage}
-          allCountries={allCountries.length}
-          pagination={pagination}
-          page={page}
-          setPage={setPage}
-        />
-      </div>
+      <Pagination
+        countriesPerPage={countriesPerPage}
+        allCountries={allCountries.length}
+        pagination={pagination}
+        page={page}
+        setPage={setPage}
+      />
+
       <div className="container-card">
         {currentCountry?.length > 0 ? (
           currentCountry?.map((e) => (

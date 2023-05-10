@@ -10,10 +10,6 @@ body {
   padding-bottom: 3em;
   backdrop-filter: blur(6px);
   border: 2px solid black;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  position: relative;
-  left: 17.5rem;
 }
 
 .container_filter select {
@@ -29,7 +25,14 @@ body {
   cursor: pointer;
   padding-left: 1em;
   padding-right: 1em;
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance: none;
 }
 .container_filter select:focus {
   border-radius: 10px 10px 0 0;
+}
+
+.container_filter select:hover {
+  border-radius: 10px 10px 10px 10px;
 }

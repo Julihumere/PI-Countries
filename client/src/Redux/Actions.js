@@ -9,13 +9,14 @@ export const FILTER_BY_LETTER = "FILTER_BY_LETTER";
 export const FILTER_BY_ACTIVITY = "FILTER_BY_ACTIVITY";
 export const GET_ERROR = "GET_ERROR";
 const URL = `${process.env.REACT_APP_URL}`;
+const URL_ALL = `${URL}/countries`;
 const URL_QUERY = `${URL}/countries?name=`;
 const URL_PARAMS = `${URL}/countries/`;
 const URL_POST = `${URL}/activity`;
 
 export const getCountries = () => (dispatch) => {
   try {
-    return fetch(URL)
+    return fetch(URL_ALL)
       .then((response) => response.json())
       .then((data) => {
         dispatch({
@@ -68,13 +69,13 @@ export const getCountriesDetail = (id) => (dispatch) => {
 export const createActivity = (payload) => (dispatch) => {
   try {
     return fetch(URL_POST, {
-      method: "POST",
+      method: "post",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify(payload),
-    }).then(() => {
+    }).then((res) => {
       dispatch({
         type: CREATE_ACTIVITY,
       });

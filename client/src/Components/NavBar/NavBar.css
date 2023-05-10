@@ -1,6 +1,10 @@
 body {
   font-family: "Montserrat Alternates", sans-serif;
 }
+
+.nav {
+  width: 80%;
+}
 .container_nav {
   display: flex;
   justify-content: space-evenly;
@@ -42,4 +46,10 @@ body {
     0 0 80px midnightblue;
   transition-delay: 1ms;
   color: white;
+}
+
+.container_filters {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

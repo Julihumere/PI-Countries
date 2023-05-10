@@ -56,7 +56,6 @@ export default function CreateActivity() {
 
   const validate = (input) => {
     let errors = {};
-    console.log(errors);
     if (!input.name) {
       errors.name = "Activity is required";
     } else if (!/^[A-Za-z0-9\s]+$/g.test(input.name)) {
@@ -89,7 +88,7 @@ export default function CreateActivity() {
       alert("Please, correct the errors so that your activity is created");
     } else {
       dispatch(createActivity(input));
-      alert("Your activity was created");
+      // alert("Your activity was created");
       setInput({
         name: "",
         duration: "",

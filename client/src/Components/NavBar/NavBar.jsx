@@ -15,7 +15,7 @@ export default function NavBar({ setPage }) {
   };
   return (
     <>
-      <nav>
+      <nav className="nav">
         <div className="container_nav">
           <h1>Countries🌎</h1>
           <SearchBar />
@@ -26,7 +26,7 @@ export default function NavBar({ setPage }) {
             🔁
           </button>
         </div>
-        <div>
+        <div className="container_filters">
           <Filters setPage={setPage} />
         </div>
       </nav>
