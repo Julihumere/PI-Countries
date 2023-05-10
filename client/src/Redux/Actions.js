@@ -8,10 +8,10 @@ export const FILTER_BY_POPULATION = "FILTER_BY_POPULATION";
 export const FILTER_BY_LETTER = "FILTER_BY_LETTER";
 export const FILTER_BY_ACTIVITY = "FILTER_BY_ACTIVITY";
 export const GET_ERROR = "GET_ERROR";
-const URL = "http://localhost:3001/countries";
-const URL_QUERY = "http://localhost:3001/countries?name=";
-const URL_PARAMS = "http://localhost:3001/countries/";
-const URL_POST = "http://localhost:3001/activity";
+const URL = `${process.env.REACT_APP_URL}`;
+const URL_QUERY = `${URL}/countries?name=`;
+const URL_PARAMS = `${URL}/countries/`;
+const URL_POST = `${URL}/activity`;
 
 export const getCountries = () => (dispatch) => {
   try {
