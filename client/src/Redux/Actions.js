@@ -1,4 +1,3 @@
-import axios from "axios";
 export const COUNTRIES = "COUNTRIES";
 export const COUNTRIES_BY_NAME = "COUNTRIES_BY_NAME";
 export const COUNTRIES_DETAIL = "COUNTRIES_DETAIL";
@@ -9,11 +8,15 @@ export const FILTER_BY_LETTER = "FILTER_BY_LETTER";
 export const FILTER_BY_ACTIVITY = "FILTER_BY_ACTIVITY";
 export const GET_ERROR = "GET_ERROR";
 
-axios.defaults.baseURL = "pi-countries-production-7d82.up.railway.app";
+const URL = `${process.env.REACT_APP_URL}`;
+const URL_ALL = `${URL}/countries`;
+const URL_QUERY = `${URL}/countries?name=`;
+const URL_PARAMS = `${URL}/countries/`;
+const URL_POST = `${URL}/activity`;
 
 export const getCountries = () => (dispatch) => {
   try {
-    return fetch("/countries")
+    return fetch(URL_ALL)
       .then((response) => response.json())
       .then((data) => {
         dispatch({
@@ -28,7 +31,7 @@ export const getCountries = () => (dispatch) => {
 
 export const getCountriesByName = (name) => (dispatch) => {
   try {
-    return fetch(`/countries?name=${name}`)
+    return fetch(URL_QUERY + name)
       .then((response) => response.json())
       .then((data) => {
         if (!data.msg) {
@@ -50,7 +53,7 @@ export const getCountriesByName = (name) => (dispatch) => {
 
 export const getCountriesDetail = (id) => (dispatch) => {
   try {
-    return fetch(`/countries/${id}`)
+    return fetch(URL_PARAMS + id)
       .then((response) => response.json())
       .then((data) => {
         dispatch({
@@ -65,7 +68,7 @@ export const getCountriesDetail = (id) => (dispatch) => {
 
 export const createActivity = (payload) => (dispatch) => {
   try {
-    return fetch("/activity", {
+    return fetch(URL_POST, {
       method: "post",
       headers: {
         Accept: "application/json",
