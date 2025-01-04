@@ -19,9 +19,9 @@ export default function NavBar({ setPage }) {
         <div className="container_nav">
           <h1>Countries🌎</h1>
           <SearchBar />
-          <Link to={"/activity"}>
+          {/* <Link to={"/activity"}>
             <button className="btn_create">Create Activity</button>
-          </Link>
+          </Link> */}
           <button onClick={(e) => handleRefresh(e)} className="btn_refresh">
             🔁
           </button>

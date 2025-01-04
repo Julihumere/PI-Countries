@@ -1,12 +1,13 @@
 .input_search {
   height: 3rem;
-  width: auto;
+  width: 40rem;
   border-radius: 10px 0 0 10px;
   background-color: midnightblue;
   color: white;
   font-family: "Montserrat Alternates", sans-serif;
   padding-left: 1em;
   border: none;
+  outline: none;
 }
 
 .input_search::placeholder {

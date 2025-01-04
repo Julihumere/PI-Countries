@@ -41,7 +41,7 @@ export default function Filters({ setPage }) {
 
   let array = [];
   for (let i = 0; i < countries.length; i++) {
-    if (countries[i].activities.length > 0) {
+    if (countries[i].activities && countries[i].activities.length > 0) {
       array.push(countries[i].activities);
     }
   }
@@ -87,7 +87,7 @@ export default function Filters({ setPage }) {
           ))}
         </select>
       </div>
-      <div>
+      {/* <div>
         <select onChange={(e) => handleFilterByActivities(e)}>
           <option hidden>Order By Activities</option>
           <option value="All">All</option>
@@ -95,7 +95,7 @@ export default function Filters({ setPage }) {
             <option value={e}>{e}</option>
           ))}
         </select>
-      </div>
+      </div> */}
     </div>
   );
 }

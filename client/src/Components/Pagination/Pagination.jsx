@@ -28,22 +28,28 @@ export default function Pagination({
 
   return (
     <>
-      <div className="page">
-        <h1>Page: {page}</h1>
-      </div>
       <div className="container-pagination">
         <button className="navigation" id="prev" onClick={prevPage}>
-          prev
+          {"<"}
         </button>
         {pageNum?.map((e) => (
           <span key={e} className="pagination">
-            <button className="active" onClick={() => pagination(e)}>
+            <button
+              className="active"
+              style={{
+                backgroundColor: page === e ? "white" : "midnightblue",
+                color: page === e ? "midnightblue" : "white",
+                fontWeight: page === e ? "bold" : "normal",
+                scale: page === e ? "1.1" : "1",
+              }}
+              onClick={() => pagination(e)}
+            >
               {e}
             </button>
           </span>
         ))}
         <button className="navigation" id="next" onClick={nextPage}>
-          next
+          {">"}
         </button>
       </div>
     </>
